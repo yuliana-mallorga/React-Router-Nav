@@ -18,6 +18,16 @@ function Menu() {
     text: "BlogPage",
   });
 
+  routes.push({
+    to: "/login",
+    text: "LoginPage",
+  });
+
+  routes.push({
+    to: "/logout",
+    text:"LogoutPage",
+  })
+
   return (
     <div>
       <h2>Menu</h2>
@@ -41,4 +51,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export {Menu};
