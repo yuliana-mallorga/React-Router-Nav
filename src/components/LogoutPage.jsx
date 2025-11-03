@@ -1,12 +1,13 @@
 import React from 'react'
+import useAuth  from "./auth/useAuth";
+
 
 function LogoutPage() {
-
+    const auth = useAuth()
     const logout = (e) => {
     e.preventDefault();
-    console.log("salir");
-    console.log(e);
-    
+    auth.logout()
+    console.log('salio', auth.user);
     
   }
   return (

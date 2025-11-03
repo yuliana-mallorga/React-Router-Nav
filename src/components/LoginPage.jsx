@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import useAuth  from "./auth/useAuth";
 
 function LoginPage() {
+  const auth = useAuth();
   const [username, setUsername] = useState("");
   const usernameRef = useRef(username);
 
@@ -10,8 +12,8 @@ function LoginPage() {
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
-    console.log("entrar", usernameRef.current);
-  }, []);
+    auth.login({username})
+  }, [username, auth]);
 
   return (
     <>
