@@ -1,13 +1,15 @@
 import React, { useState, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from './AuthContext'
+import { adminList } from '../auth/adminList'
 
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
   const login = useCallback(({ username }) => {
-    setUser({ username });
+    const isAdmin = Array.isArray(adminList) && adminList.includes(username)
+    setUser({ username, isAdmin });
     navigate('/profile')
   }, [navigate])
 
