@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import useAuth  from "./auth/useAuth";
+import { Navigate } from "react-router-dom";
 
 function LoginPage() {
   const auth = useAuth();
@@ -15,6 +16,10 @@ function LoginPage() {
     auth.login({username})
   }, [username, auth]);
 
+  if(auth.user) {
+    return <Navigate to= '/profile'/>
+  }
+
   return (
     <>
       <h1>Login</h1>
@@ -26,7 +31,9 @@ function LoginPage() {
         <input
           id="username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) =>{
+             setUsername(e.target.value)
+          }}
         />
         <button type="submit">Entrar</button>
       </form>
