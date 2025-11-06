@@ -1,7 +1,9 @@
 import React, { useState, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from './AuthContext'
-import { adminList } from '../auth/adminList'
+import { adminList } from './roleList'
+import { editorList } from './roleList'
+import { betaTesterList } from './roleList';
 
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
@@ -9,7 +11,9 @@ export function AuthProvider({ children }) {
 
   const login = useCallback(({ username }) => {
     const isAdmin = Array.isArray(adminList) && adminList.includes(username)
-    setUser({ username, isAdmin });
+    const isEditor = Array.isArray(editorList) && editorList.includes(username)
+    const isBetaTester = Array.isArray(betaTesterList) && betaTesterList.includes(username)
+    setUser({ username, isAdmin, isEditor, isBetaTester });   
     navigate('/profile')
   }, [navigate])
 

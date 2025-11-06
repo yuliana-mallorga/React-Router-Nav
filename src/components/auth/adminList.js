@@ -1,1 +1,0 @@
-export const adminList = ['iris', 'kum', 'uriel']
