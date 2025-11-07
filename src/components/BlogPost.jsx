@@ -71,7 +71,7 @@ const BlogPost = () => {
             Editar el blog
           </button>
         )}
-         {canDelete && (
+        {canDelete && (
           <button type="button" onClick={handleDelete}>
             Eliminar el blog
           </button>
@@ -79,23 +79,30 @@ const BlogPost = () => {
       </div>
       {canComment && (
         <div style={{ margin: "10px" }}>
+          <label htmlFor="comments" style={{ paddingRight: "5px" }}>Comenta:
           <input
             maxLength={100}
             value={comment}
-            style={{ padding: "10px" }}
+            style={{ padding: "10px", marginLeft: "10px" }}
             aria-label="new comment"
             onChange={(e) => setComment(e.target.value)}
           />
-          <button type="submit" onClick={handleComment}>
+          </label>
+
+          <button
+            type="button"
+            onClick={handleComment}
+            disabled={!comment.trim()}
+          >
             Enviar
           </button>
           <ul>
             {comments.length > 0 &&
-              comments.map((comment, idx) => {
+              comments.map((com, idx) => {
                 return (
                   <li key={idx}>
                     {" "}
-                    <p>{comment}</p>{" "}
+                    <p>{com}</p>{" "}
                   </li>
                 );
               })}
