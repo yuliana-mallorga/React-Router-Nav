@@ -1,0 +1,6 @@
+{
+  "version": "1.0",
+  "default_agent": "asistente-general",
+  "project_context": "claude.md",
+  "agents_dir": ".claude/agents"
+}

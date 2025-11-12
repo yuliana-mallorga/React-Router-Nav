@@ -24,3 +24,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code
+.claude/cache
+.claude/*.log
+.claude/temp/
