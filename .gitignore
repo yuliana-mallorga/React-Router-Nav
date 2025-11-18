@@ -29,3 +29,8 @@ dist-ssr
 .claude/cache
 .claude/*.log
 .claude/temp/
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
