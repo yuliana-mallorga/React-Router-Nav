@@ -11,6 +11,7 @@ Educational blog application developed as part of Platzi's React Router course. 
 - [Installation](#-installation)
 - [Architecture](#️-architecture)
 - [Project Structure](#-project-structure)
+- [Claude Code Integration](#-claude-code-integration)
 - [Using Custom Hooks](#-using-custom-hooks)
 - [Creating a New Post](#-creating-a-new-post)
 - [Protecting a Route](#-protecting-a-route)
@@ -174,6 +175,79 @@ src/
 │   ├── BlogPost.jsx                 # Individual post view
 │   └── [other components]
 ```
+
+## 🤖 Claude Code Integration
+
+This project is configured to work seamlessly with [Claude Code](https://claude.com/claude-code), Anthropic's AI-powered development assistant for coding tasks.
+
+### Configuration Files
+
+**CLAUDE.md** - Provides project context and architecture guidance to Claude Code:
+- Development commands and workflow
+- Architecture patterns (Context API, routing structure)
+- Key implementation patterns and known issues
+- File organization and conventions
+
+**.claude/config.json** - Claude Code configuration:
+```json
+{
+  "version": "1.0",
+  "default_agent": "asistente-general",
+  "project_context": "claude.md",
+  "agents_dir": ".claude/agents"
+}
+```
+
+### Specialized Agents
+
+The project includes custom agents optimized for specific tasks:
+
+**Frontend Specialist** (`frontend-specialist`)
+- Building and modifying React components
+- Implementing UI/UX features and responsive design
+- Creating custom React hooks
+- Working with React Router v6 and Context API
+- TypeScript and React best practices
+
+> **Note**: The project also includes a `backend-specialist` agent template for future backend integration, though this current version uses only frontend technologies with localStorage for data persistence.
+
+### Using Claude Code
+
+1. **Install Claude Code**:
+   - macOS: `brew install --cask claude-code`
+
+- Or consult the official documentation for other options. [https://docs.claude.com/en/home]
+
+2. **Start a conversation**:
+```bash
+claude
+```
+
+3. **Work with the project**:
+   - Claude automatically reads `CLAUDE.md` and understands your project structure
+   - The `frontend-specialist` agent is available for React/UI tasks
+   - Simply describe your task naturally - Claude will use the appropriate agent when needed
+
+4. **Example interactions**:
+```
+"Create a new Card component for displaying post previews"
+"Help me refactor the BlogPage component to improve performance"
+"Add error handling to the PostForm component"
+```
+
+5. **Project context awareness**:
+Claude automatically understands:
+- Your project architecture (Context API, React Router v6)
+- Custom hooks (useAuth, usePost)
+- Role-based authorization system
+- Known bugs and implementation details from CLAUDE.md
+
+### Benefits
+
+- **Context-Aware Assistance**: Claude understands your project structure and patterns
+- **Specialized Expertise**: Dedicated agents for frontend and backend tasks
+- **Code Quality**: Follows established patterns and best practices
+- **Documentation Aware**: Uses CLAUDE.md as source of truth for architecture decisions
 
 ## 🔧 Using Custom Hooks
 
