@@ -11,6 +11,7 @@ Educational blog application developed as part of Platzi's React Router course. 
 - [Installation](#-installation)
 - [Architecture](#️-architecture)
 - [Project Structure](#-project-structure)
+- [Claude Code Integration](#-claude-code-integration)
 - [Using Custom Hooks](#-using-custom-hooks)
 - [Creating a New Post](#-creating-a-new-post)
 - [Protecting a Route](#-protecting-a-route)
@@ -174,6 +175,81 @@ src/
 │   ├── BlogPost.jsx                 # Individual post view
 │   └── [other components]
 ```
+
+## 🤖 Claude Code Integration
+
+This project is configured to work seamlessly with [Claude Code](https://claude.com/claude-code), Anthropic's official CLI for AI-assisted development.
+
+### Configuration Files
+
+**CLAUDE.md** - Provides project context and architecture guidance to Claude Code:
+- Development commands and workflow
+- Architecture patterns (Context API, routing structure)
+- Key implementation patterns and known issues
+- File organization and conventions
+
+**.claude/config.json** - Claude Code configuration:
+```json
+{
+  "version": "1.0",
+  "default_agent": "asistente-general",
+  "project_context": "claude.md",
+  "agents_dir": ".claude/agents"
+}
+```
+
+### Specialized Agents
+
+The project includes custom agents optimized for specific tasks:
+
+**Frontend Specialist** (`frontend-specialist`)
+- Building and modifying React components
+- Implementing UI/UX features and responsive design
+- Creating custom React hooks
+- Connecting frontend to backend APIs
+- TypeScript and React Router best practices
+
+**Backend Specialist** (`backend-specialist`)
+- Designing RESTful APIs with FastAPI
+- PostgreSQL database schemas and migrations
+- Authentication and authorization patterns
+- Query optimization and performance tuning
+- Async/await patterns and Pydantic models
+
+### Using Claude Code
+
+1. **Install Claude Code CLI**:
+```bash
+# Follow installation instructions at https://docs.claude.com/claude-code
+```
+
+2. **Start a conversation**:
+```bash
+claude
+```
+
+3. **Use specialized agents**:
+```
+# For frontend tasks
+"Use the frontend-specialist to create a new Card component"
+
+# For backend tasks
+"Use the backend-specialist to design a user authentication API"
+```
+
+4. **Leverage project context**:
+Claude automatically reads CLAUDE.md and understands:
+- Your project architecture and patterns
+- Custom hooks (useAuth, usePost)
+- Role-based authorization system
+- Known bugs and implementation details
+
+### Benefits
+
+- **Context-Aware Assistance**: Claude understands your project structure and patterns
+- **Specialized Expertise**: Dedicated agents for frontend and backend tasks
+- **Code Quality**: Follows established patterns and best practices
+- **Documentation Aware**: Uses CLAUDE.md as source of truth for architecture decisions
 
 ## 🔧 Using Custom Hooks
 
