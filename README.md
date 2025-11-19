@@ -178,7 +178,7 @@ src/
 
 ## 🤖 Claude Code Integration
 
-This project is configured to work seamlessly with [Claude Code](https://claude.com/claude-code), Anthropic's official CLI for AI-assisted development.
+This project is configured to work seamlessly with [Claude Code](https://claude.com/claude-code), Anthropic's AI-powered development assistant for coding tasks.
 
 ### Configuration Files
 
@@ -206,43 +206,41 @@ The project includes custom agents optimized for specific tasks:
 - Building and modifying React components
 - Implementing UI/UX features and responsive design
 - Creating custom React hooks
-- Connecting frontend to backend APIs
-- TypeScript and React Router best practices
+- Working with React Router v6 and Context API
+- TypeScript and React best practices
 
-**Backend Specialist** (`backend-specialist`)
-- Designing RESTful APIs with FastAPI
-- PostgreSQL database schemas and migrations
-- Authentication and authorization patterns
-- Query optimization and performance tuning
-- Async/await patterns and Pydantic models
+> **Note**: The project also includes a `backend-specialist` agent template for future backend integration, though this current version uses only frontend technologies with localStorage for data persistence.
 
 ### Using Claude Code
 
-1. **Install Claude Code CLI**:
-```bash
-# Follow installation instructions at https://docs.claude.com/claude-code
-```
+1. **Install Claude Code**:
+   - macOS: `brew install --cask claude-code`
+
+- Or consult the official documentation for other options. [https://docs.claude.com/en/home]
 
 2. **Start a conversation**:
 ```bash
 claude
 ```
 
-3. **Use specialized agents**:
-```
-# For frontend tasks
-"Use the frontend-specialist to create a new Card component"
+3. **Work with the project**:
+   - Claude automatically reads `CLAUDE.md` and understands your project structure
+   - The `frontend-specialist` agent is available for React/UI tasks
+   - Simply describe your task naturally - Claude will use the appropriate agent when needed
 
-# For backend tasks
-"Use the backend-specialist to design a user authentication API"
+4. **Example interactions**:
+```
+"Create a new Card component for displaying post previews"
+"Help me refactor the BlogPage component to improve performance"
+"Add error handling to the PostForm component"
 ```
 
-4. **Leverage project context**:
-Claude automatically reads CLAUDE.md and understands:
-- Your project architecture and patterns
+5. **Project context awareness**:
+Claude automatically understands:
+- Your project architecture (Context API, React Router v6)
 - Custom hooks (useAuth, usePost)
 - Role-based authorization system
-- Known bugs and implementation details
+- Known bugs and implementation details from CLAUDE.md
 
 ### Benefits
 
